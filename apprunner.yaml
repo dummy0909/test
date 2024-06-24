@@ -5,7 +5,14 @@ build:
     build:
       - pip install -r requirements.txt
 run:
+<<<<<<< HEAD
   runtime-version: 3.8.16
   command: sh startup.sh
   network:
     port: 8000
+=======
+  command: >
+    python3 manage.py migrate &&
+    python3 manage.py collectstatic --noinput &&
+    python3 manage.py runserver 
+>>>>>>> cb79760 (initial commit)
