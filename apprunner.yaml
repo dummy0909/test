@@ -2,8 +2,10 @@ version: 1.0
 runtime: python3
 build:
   commands:
-    - pip install -r requirements.txt
+    build:
+      - pip install -r requirements.txt
 run:
-  command: >
-    coverage run --source='.' manage.py test
-    coverage report
+  runtime-version: 3.8.16
+  command: sh startup.sh
+  network:
+    port: 8000
